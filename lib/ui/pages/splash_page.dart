@@ -25,28 +25,36 @@ class _SplashPageState extends State<SplashPage> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
+          alignment: Alignment.bottomCenter,
           children: [
-            Container(
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: MediaQuery.of(context).size.height * 0.8,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/logo_splash.png'),
-                  fit: BoxFit.contain,
+            Center(
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.45,
+                height: MediaQuery.of(context).size.height * 0.4,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/logo_splash.png'),
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
-            Text(
-              'Copyright UMKT ©2023',
-              style: greyTextStyle.copyWith(
-                fontSize: 14,
-                fontWeight: regular,
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: 20),
+                  Text(
+                    'Copyright UMKT ©2023',
+                    style: greyTextStyle,
+                  ),
+                ],
               ),
             ),
           ],
